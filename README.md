@@ -19,5 +19,5 @@ Colorizer is built on top of colorama : https://github.com/tartley/colorama
 * Generate code in colors.py with a script instead of at runtime
     * Allow code completion
     * Remove annoying error messages
-* Add support for reusing colors by index, e.g. c.print('{0:oh} {1:hai} {0:there}', colors.RED, colors.BLACK)
+* Add support for reusing colors by index, e.g. `c.print('{0:oh} {1:hai} {0:there}', colors.RED, colors.BLACK)`
     * Make it more similar to Python's `format`
