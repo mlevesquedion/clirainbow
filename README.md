@@ -1,14 +1,13 @@
 # Colorizer
 Easily print colored text.
 
-## Examples
+## Example usage
 ```python
 >>> from colorizer import Colorizer
 >>> from colors import RED, GREEN
 >>> c = Colorizer()
 >>> c.print('{hello} {world!}', RED, GREEN)
 ```
-Prints: <span style='color:red'>hello</span> <span style='color:green'>world!</span> 
 
 ## Disclaimer
 Colorizer may not work on certain systems (e.g., Windows) or with certain terminals.
@@ -21,3 +20,4 @@ Colorizer is built on top of colorama : https://github.com/tartley/colorama
     * Allow code completion
     * Remove annoying error messages
 * Add support for reusing colors by index, e.g. c.print('{0:oh} {1:hai} {0:there}', colors.RED, colors.BLACK)
+    * Make it more similar to Python's `format`
