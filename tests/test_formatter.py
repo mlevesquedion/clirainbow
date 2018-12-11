@@ -1,7 +1,7 @@
-from colorizer import Colorizer
+from colorizer.colorizer import Colorizer
 # noinspection PyUnresolvedReferences
-from colors import *
-from formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed
+from colorizer.colors import *
+from colorizer.formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed
 from pytest import fixture, raises
 
 

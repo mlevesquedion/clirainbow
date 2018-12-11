@@ -1,5 +1,5 @@
-from colorizer import Colorizer, ColorBracketOpenedButNotClosed
-from colors import *
+from .colorizer import Colorizer, ColorBracketOpenedButNotClosed
+from .colors import *
 
 
 if __name__ == '__main__':

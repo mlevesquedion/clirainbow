@@ -1,4 +1,4 @@
-from colors import DEFAULT_COLOR
+from .colors import DEFAULT_COLOR
 
 COLOR_START, COLOR_END, CHAR = range(3)
 

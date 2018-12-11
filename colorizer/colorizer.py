@@ -1,6 +1,6 @@
 from colorama import init
 # noinspection PyUnresolvedReferences
-from formatter import format_color_string, ColorBracketOpenedButNotClosed
+from .formatter import format_color_string, ColorBracketOpenedButNotClosed
 
 
 class Colorizer:
