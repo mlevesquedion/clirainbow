@@ -6,7 +6,8 @@ COLOR_START, COLOR_END, CHAR = range(3)
 class ColorBracketOpenedButNotClosed(Exception):
 
     def __init__(self, position):
-        super().__init__(f'Color bracket opened at position {position} was never closed')
+        super().__init__(
+            f'Color bracket opened at position {position} was never closed')
 
 
 def tokenize(string):
