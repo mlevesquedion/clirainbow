@@ -1,6 +1,9 @@
-from .colors import DEFAULT_COLOR
+from colors import DEFAULT_COLOR
 
 COLOR_START, COLOR_END, CHAR = range(3)
+
+OPENING_BRACKET = '<'
+CLOSING_BRACKET = '>'
 
 
 class ColorBracketOpenedButNotClosed(Exception):
@@ -15,19 +18,19 @@ def tokenize(string):
     tokens = []
     in_color = False
     while i < len(string):
-        if string[i] == '{':
-            if string[i:i + 2] == '{{':
-                tokens.append((CHAR, '{'))
+        if string[i] == OPENING_BRACKET:
+            if string[i:i + 2] == OPENING_BRACKET * 2:
+                tokens.append((CHAR, OPENING_BRACKET))
                 i += 1
             else:
-                tokens.append((COLOR_START, '{'))
+                tokens.append((COLOR_START, OPENING_BRACKET))
                 in_color = True
-        elif string[i] == '}':
-            if not in_color or string[i:i + 2] == '}}':
-                tokens.append((CHAR, '}'))
+        elif string[i] == CLOSING_BRACKET:
+            if not in_color or string[i:i + 2] == CLOSING_BRACKET * 2:
+                tokens.append((CHAR, CLOSING_BRACKET))
                 i += 1
             else:
-                tokens.append((COLOR_END, '}'))
+                tokens.append((COLOR_END, CLOSING_BRACKET))
                 in_color = False
         else:
             tokens.append((CHAR, string[i]))
@@ -70,7 +73,7 @@ def format_color_string(string, colors):
 
 def parse_color(i, tokens):
     parsed = ''
-    while tokens[i][0] != COLOR_END:
+    while i < len(tokens) and tokens[i][0] != COLOR_END:
         parsed += tokens[i][1]
         i += 1
     return i + 1, parsed
@@ -78,7 +81,7 @@ def parse_color(i, tokens):
 
 def parse_normal(i, tokens):
     parsed = ''
-    while tokens[i][0] != COLOR_START:
+    while i < len(tokens) and tokens[i][0] != COLOR_START:
         parsed += tokens[i][1]
         i += 1
     return i, parsed

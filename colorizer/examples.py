@@ -1,18 +1,18 @@
-from .colorizer import Colorizer, ColorBracketOpenedButNotClosed
-from .colors import *
+from colorizer import Colorizer, ColorBracketOpenedButNotClosed
+from colors import *
 
 
 if __name__ == '__main__':
     c = Colorizer()
 
     c.print(
-        '{hello} {world}',
+        '<hello> <world>',
         BRIGHT_RED_ON_MAGENTA,
         DIM_GREEN_ON_WHITE
     )
 
     c.print(
-        '{ }{ }{ }{ }{ }{ }{ }{ }',
+        '< >< >< >< >< >< >< >< >',
         BACK_RED,
         BACK_GREEN,
         BACK_BLUE,
@@ -24,7 +24,7 @@ if __name__ == '__main__':
     )
 
     c.print(
-        '{➜ } {colorizer} {git:(}{master}{)} {✗}',
+        '<➜ > <colorizer> <git:(><master><)> <✗>',
         GREEN,
         CYAN,
         BLUE,
@@ -34,6 +34,6 @@ if __name__ == '__main__':
     )
 
     try:
-        c.print('{asdg')
+        c.print('<asdg')
     except ColorBracketOpenedButNotClosed as e:
         print(f'ERROR: {e}')

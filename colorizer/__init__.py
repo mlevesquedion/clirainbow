@@ -1,2 +1,1 @@
-from .colorizer import Colorizer
-from .colors import *
+__version__ = "1.0.0"
