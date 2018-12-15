@@ -1,4 +1,4 @@
-from colorizer.colorizer import Colorizer
+from colorizer.colorizer import Colorizer, ColorBracketOpenedButNotClosed
 # noinspection PyUnresolvedReferences
 from colorizer.colors import *
 from colorizer.formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed
@@ -123,3 +123,17 @@ def test_plays_nicely_with_fstrings(colorizer):
     colors = [BRIGHT_RED_ON_MAGENTA, GREEN_ON_WHITE]
     assert format_color_string(string, colors) == '{}hello{} {}world'.format(BRIGHT_RED_ON_MAGENTA, DEFAULT_COLOR,
                                                                              GREEN_ON_WHITE)
+
+
+def test_given_more_brackets_than_colors_should_throw_error():
+    string = '<>'
+    colors = []
+    with raises(MoreBracketsThanColors):
+        format_color_string(string, colors)
+
+
+def test_given_more_brackets_than_colors_should_throw_error():
+    string = ''
+    colors = [RED]
+    with raises(MoreColorsThanBrackets):
+        format_color_string(string, colors)
