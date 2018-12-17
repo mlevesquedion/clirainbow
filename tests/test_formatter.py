@@ -1,7 +1,7 @@
-from colorizer.colorizer import Colorizer, ColorBracketOpenedButNotClosed
 # noinspection PyUnresolvedReferences
-from colorizer.colors import *
-from colorizer.formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed
+from clirainbow.clirainbow import Colorizer, ColorBracketOpenedButNotClosed, MoreBracketsThanColors, MoreColorsThanBrackets
+from clirainbow.colors import *
+from clirainbow.formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed, MoreColorsThanBrackets, MoreBracketsThanColors
 from pytest import fixture, raises
 
 

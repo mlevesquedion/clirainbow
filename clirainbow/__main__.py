@@ -1,5 +1,5 @@
-from colorizer import Colorizer
-from colors import *
+from clirainbow.clirainbow import Colorizer
+from clirainbow.colors import *
 
 
 def main():

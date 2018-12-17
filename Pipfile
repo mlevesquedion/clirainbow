@@ -1,17 +1,17 @@
 [[source]]
 
 verify_ssl = true
-url = 'https://pypi.python.org/simple'
-name = 'printcolor'
+url = "https://pypi.python.org/clirainbow"
+name = "clirainbow"
 
 [requires]
 
-python_version = '3.7'
+python_version = "3.7"
 
 [packages]
 
-colorama = '==0.3.9'
+colorama = "==0.3.9"
 
 [dev-packages]
 
-pytest = '*'
+pytest = "*"

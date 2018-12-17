@@ -7,11 +7,11 @@ with open(os.path.join(HERE, "README.md")) as readme:
     README = readme.read()
 
 setup(
-    name="colorizer",
-    version="1.0.0",
-    description="Easily print colored text",
+    name="clirainbow",
+    version="1.0.2",
+    description="Easily print colored text.",
     long_description=README,
-    url="https://github.com/mlevesquedion/colorizer",
+    url="https://github.com/mlevesquedion/clirainbow",
     author="Michaël Lévesque-Dion",
     author_email="mlevesquedion@gmail.com",
     license="MIT",
@@ -19,7 +19,7 @@ setup(
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
     ],
-    packages=["colorizer"],
+    packages=["clirainbow"],
     include_package_data=True,
     install_requires=[
         "colorama"

@@ -1,4 +1,4 @@
-from colors import DEFAULT_COLOR
+from clirainbow.colors import DEFAULT_COLOR
 
 COLOR_START, COLOR_END, CHAR = range(3)
 
@@ -11,6 +11,20 @@ class ColorBracketOpenedButNotClosed(Exception):
     def __init__(self, position):
         super().__init__(
             f'Color bracket opened at position {position} was never closed')
+
+
+class MoreBracketsThanColors(Exception):
+
+    def __init__(self, n_brackets, n_colors):
+        super().__init__(
+            f'You gave me {n_brackets} brackets to fill, but only {n_colors} to fill them with')
+
+
+class MoreColorsThanBrackets(Exception):
+
+    def __init__(self, n_brackets, n_colors):
+        super().__init__(
+            f'You gave me {n_colors} colors to use, but only {n_brackets} brackets to fill')
 
 
 def tokenize(string):
@@ -55,6 +69,12 @@ def validate(tokens):
 
 def format_color_string(string, colors):
     tokens = tokenize(string)
+    n_brackets = tokens.count((COLOR_START, OPENING_BRACKET))
+    n_colors = len(colors)
+    if n_brackets > n_colors:
+        raise MoreBracketsThanColors(n_brackets, n_colors)
+    if n_colors > n_brackets:
+        raise MoreColorsThanBrackets(n_brackets, n_colors)
     i = 0
     color_index = 0
     result = ''

@@ -1,5 +1,21 @@
-from colorizer import Colorizer, ColorBracketOpenedButNotClosed
-from colors import *
+from clirainbow import Colorizer, ColorBracketOpenedButNotClosed
+from clirainbow import (
+    BRIGHT_RED_ON_MAGENTA,
+    DIM_GREEN_ON_WHITE,
+    BACK_RED,
+    BACK_GREEN,
+    BACK_BLUE,
+    BACK_YELLOW,
+    BACK_CYAN,
+    BACK_MAGENTA,
+    BACK_BLACK,
+    BACK_WHITE,
+    GREEN,
+    CYAN,
+    BLUE,
+    RED,
+    YELLOW
+)
 
 
 if __name__ == '__main__':
