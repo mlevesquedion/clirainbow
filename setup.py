@@ -8,7 +8,7 @@ with open(os.path.join(HERE, "README.md")) as readme:
 
 setup(
     name="clirainbow",
-    version="1.0.2",
+    version="1.0.3",
     description="Easily print colored text.",
     long_description=README,
     url="https://github.com/mlevesquedion/clirainbow",
