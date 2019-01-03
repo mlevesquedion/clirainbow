@@ -17,7 +17,7 @@ class MoreBracketsThanColors(Exception):
 
     def __init__(self, n_brackets, n_colors):
         super().__init__(
-            f'You gave me {n_brackets} brackets to fill, but only {n_colors} to fill them with')
+            f'You gave me {n_brackets} brackets to fill, but only {n_colors} color{"" if n_colors == 1 else "s"} to fill them with')
 
 
 class MoreColorsThanBrackets(Exception):
