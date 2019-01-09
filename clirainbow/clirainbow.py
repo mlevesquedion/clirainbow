@@ -1,6 +1,6 @@
 from colorama import init
 # noinspection PyUnresolvedReferences
-from clirainbow.formatter import format_color_string, ColorBracketOpenedButNotClosed, MoreBracketsThanColors, MoreColorsThanBrackets
+from clirainbow.formatter import format_color_string, sanitize, ColorBracketOpenedButNotClosed, MoreBracketsThanColors, MoreColorsThanBrackets
 
 
 class Colorizer:

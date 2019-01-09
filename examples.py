@@ -17,7 +17,6 @@ from clirainbow import (
     YELLOW
 )
 
-
 if __name__ == '__main__':
     c = Colorizer()
 

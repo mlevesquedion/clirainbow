@@ -27,6 +27,13 @@ class MoreColorsThanBrackets(Exception):
             f'You gave me {n_colors} colors to use, but only {n_brackets} brackets to fill')
 
 
+def sanitize(string):
+    def escape_brackets(c):
+        return c * 2 if c in [OPENING_BRACKET, CLOSING_BRACKET] else c
+
+    return ''.join(map(escape_brackets, string))
+
+
 def tokenize(string):
     i = 0
     tokens = []

@@ -1,7 +1,17 @@
 # noinspection PyUnresolvedReferences
 from clirainbow.clirainbow import Colorizer, ColorBracketOpenedButNotClosed, MoreBracketsThanColors, MoreColorsThanBrackets
 from clirainbow.colors import *
-from clirainbow.formatter import COLOR_START, CHAR, COLOR_END, tokenize, format_color_string, ColorBracketOpenedButNotClosed, MoreColorsThanBrackets, MoreBracketsThanColors
+from clirainbow.formatter import (
+    COLOR_START,
+    CHAR,
+    COLOR_END,
+    tokenize,
+    sanitize,
+    format_color_string,
+    ColorBracketOpenedButNotClosed,
+    MoreColorsThanBrackets,
+    MoreBracketsThanColors
+)
 from pytest import fixture, raises
 
 
@@ -137,3 +147,9 @@ def test_given_more_brackets_than_colors_should_throw_error():
     colors = [RED]
     with raises(MoreColorsThanBrackets):
         format_color_string(string, colors)
+
+
+def test_sanitizes_a_string_by_doubling_each_opening_bracket():
+    string = '<__main__.A object at 0x7fd119da0eb8>'
+    sanitized = '<<__main__.A object at 0x7fd119da0eb8>>'
+    assert sanitize(string) == sanitized
